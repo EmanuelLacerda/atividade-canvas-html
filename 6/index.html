@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questão 6</title>
+  <style>
+    canvas{border:1px solid rgb(235, 239, 3);}
+  </style>
+</head>
+<body>
+
+<canvas width="600" height="600"></canvas>
+
+
+<script>
+  let canvas = document.querySelector('canvas');
+  let ctx = canvas.getContext('2d');
+
+  const circleWidth = 20;
+  
+  function drawCircle(x, y){
+    ctx.fillStyle="#012169";
+
+    ctx.beginPath();
+    ctx.arc(x, y, circleWidth, 0, 2 * Math.PI);
+    ctx.fill();
+  }
+
+  let dirX;
+  let dirY;
+  let posX;
+  let posY;
+  let velocity;
+  let time;
+
+
+  function Start(){
+    dirX = dirY = 0;
+    posX = 280;
+    posY = 280;
+    velocity = 50;
+    time = setInterval(Update, 100);
+    document.addEventListener('keydown', KeyDown);
+    document.addEventListener('keyup', KeyUp);
+  }
+
+  function KeyDown(){
+    let tecla = event.key;
+    
+    if(tecla === 'ArrowRight')
+        dirX = 1
+    else if(tecla === 'ArrowLeft')
+        dirX = -1
+    else if(tecla === 'ArrowUp')
+        dirY = -1
+    else if(tecla === 'ArrowDown')
+        dirY = 1
+  }
+  
+  function KeyUp(){
+    let tecla = event.key;
+    
+    if(tecla === 'ArrowRight')
+        dirX = 0
+    else if(tecla === 'ArrowLeft')
+        dirX = 0
+    else if(tecla === 'ArrowUp')
+        dirY = 0
+    else if(tecla === 'ArrowDown')
+        dirY = 0
+  }
+
+  function Update(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    novaPosX = posX + dirX * velocity;
+    novaPosY = posY + dirY * velocity;
+
+    if(
+      novaPosX > canvas.width
+    )
+      novaPosX = canvas.width-circleWidth;
+
+    if(
+      novaPosX < 0
+    )
+      novaPosX = circleWidth;
+
+    if(
+      novaPosY > canvas.height
+    )
+      novaPosY = canvas.height-circleWidth;
+
+    if(
+      novaPosY < 0
+    )
+      novaPosY = circleWidth;
+    
+    posX = novaPosX;
+    posY = novaPosY;
+
+    drawCircle(posX, posY);
+  }
+
+  window.addEventListener('load', Start)
+</script>
+</body>
+</html>
