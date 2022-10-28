@@ -1,0 +1,78 @@
+<!DOCTYPE <html>
+	<head>
+		<title>Questão 5 a)</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style type="text/css">
+			.container{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				height: 96vh;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<canvas id="desenho1" width="800" height="150">
+				<p>Seu browser não possui suporte ao canvas</p>
+			</canvas>
+		</div>
+
+		<script type="text/javascript">
+			const canvas = document.getElementById("desenho1");
+			const ctx=canvas.getContext("2d");
+
+			ctx.strokeStyle="blue";
+			ctx.strokeRect(20,50,140,100);
+
+			topoTrianguloCordX = 90;
+			topoTrianguloCordY = 75;
+
+
+			ctx.fillStyle="blue";
+			ctx.beginPath();
+			ctx.moveTo(topoTrianguloCordX,topoTrianguloCordY);
+		    ctx.lineTo(topoTrianguloCordX-30,topoTrianguloCordY+50);
+		    ctx.lineTo(topoTrianguloCordX+30,topoTrianguloCordY+50);
+		    ctx.fill();
+
+
+			ctx.strokeStyle="blue";
+			ctx.beginPath();
+			ctx.arc(260, 100, 40, 0, 2 * Math.PI);
+			ctx.stroke()
+
+
+			ctx.fillStyle="blue";
+			ctx.fillRect(235,74,50,50);
+
+			topoTrianguloCordX = 400;
+			topoTrianguloCordY = 54;
+
+
+			ctx.strokeStyle="blue";
+			ctx.fillStyle = "transparent";
+			ctx.beginPath();
+			ctx.moveTo(topoTrianguloCordX,topoTrianguloCordY);
+		    ctx.lineTo(topoTrianguloCordX-40,topoTrianguloCordY+70);
+		    ctx.lineTo(topoTrianguloCordX+40,topoTrianguloCordY+70);
+		    ctx.lineTo(topoTrianguloCordX,topoTrianguloCordY);
+		    ctx.stroke();
+
+		    topoTrianguloCordX = 460;
+			topoTrianguloCordY = 54;
+
+
+			ctx.strokeStyle="blue";
+			ctx.fillStyle = "transparent";
+			ctx.beginPath();
+			ctx.moveTo(topoTrianguloCordX,topoTrianguloCordY);
+		    ctx.lineTo(topoTrianguloCordX-40,topoTrianguloCordY+70);
+		    ctx.lineTo(topoTrianguloCordX+40,topoTrianguloCordY+70);
+		    ctx.lineTo(topoTrianguloCordX,topoTrianguloCordY);
+		    ctx.stroke();
+		</script>
+	</body>
+</html>
