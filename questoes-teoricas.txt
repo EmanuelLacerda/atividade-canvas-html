@@ -1,5 +1,15 @@
 1 – Com suas palavras descreva o que é a DOM e qual sua relação com o HTML?
 
+A DOM é uma interface de programação que os browsers usam para representar páginas na web. Dessa maneira, a DOM oferta um modelo de representação e interação do documento HTML ou XML. O modelo se estrutura em formato de árvore, sendo os galhos desta árvore os diferentes elementos da página.
+
+
+
+Por meio dela, é possível manipular e modificar elementos de um documento web conectado as linguagens de programação à página em questão. Esse processo pode ser executado por qualquer linguagem de programação, mas, o mais comum é ser feito com Javascript.
+
+
+
+Com uma linguagem de programação, é possível adicionar, remover e alterar elementos da página HTML.
+
 
 
 2 – O que é o canvas HTML?
